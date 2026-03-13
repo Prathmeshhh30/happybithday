@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Aditi ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:Poppins;
+background:black;
+color:white;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,0.6);
+display:flex;
+justify-content:center;
+gap:20px;
+padding:15px;
+z-index:1000;
+}
+
+nav button{
+background:#ff2e63;
+border:none;
+color:white;
+padding:10px 18px;
+border-radius:20px;
+cursor:pointer;
+}
+
+/* TABS */
+
+section{
+min-height:100vh;
+display:none;
+padding-top:100px;
+text-align:center;
+}
+
+.active{
+display:block;
+}
+
+/* STARS */
+
+.star{
+position:fixed;
+width:2px;
+height:2px;
+background:white;
+animation:twinkle 2s infinite;
+}
+
+@keyframes twinkle{
+0%{opacity:.2}
+50%{opacity:1}
+100%{opacity:.2}
+}
+
+/* HEARTS */
+
+.heart{
+position:fixed;
+color:red;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh)}
+100%{transform:translateY(-10vh)}
+}
+
+/* SLIDER */
+
+.slider{
+width:80%;
+margin:auto;
+overflow:hidden;
+border-radius:20px;
+}
+
+.slides{
+display:flex;
+animation:slide 18s infinite;
+}
+
+.slides img{
+width:100%;
+}
+
+@keyframes slide{
+0%{transform:translateX(0)}
+20%{transform:translateX(0)}
+25%{transform:translateX(-100%)}
+45%{transform:translateX(-100%)}
+50%{transform:translateX(-200%)}
+70%{transform:translateX(-200%)}
+75%{transform:translateX(-300%)}
+95%{transform:translateX(-300%)}
+100%{transform:translateX(-400%)}
+}
+
+/* LETTER */
+
+#letter{
+width:70%;
+margin:auto;
+font-size:26px;
+min-height:120px;
+}
+
+/* CONFETTI */
+
+.confetti{
+position:fixed;
+font-size:25px;
+animation:fall 3s linear forwards;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10vh)}
+100%{transform:translateY(100vh);opacity:0}
+}
+
+/* PROPOSAL */
+
+#proposal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.85);
+display:none;
+justify-content:center;
+align-items:center;
+}
+
+.popup{
+background:white;
+color:black;
+padding:40px;
+border-radius:20px;
+}
+
+/* FIREWORK */
+
+.fire{
+position:fixed;
+font-size:30px;
+animation:boom 1s forwards;
+}
+
+@keyframes boom{
+0%{transform:scale(0)}
+100%{transform:scale(2);opacity:0}
+}
+
+/* HUG */
+
+.hug{
+font-size:90px;
+animation:hug 1s infinite;
+}
+
+@keyframes hug{
+0%{transform:scale(1)}
+50%{transform:scale(1.2)}
+100%{transform:scale(1)}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- SONG -->
+<audio autoplay loop>
+<source src="dooron.mp3" type="audio/mp3">
+</audio>
+
+<!-- NAV -->
+
+<nav>
+<button onclick="showTab('home')">Home</button>
+<button onclick="showTab('memories')">Memories</button>
+<button onclick="showTab('reasons')">Reasons</button>
+<button onclick="showTab('birthday')">Birthday</button>
+<button onclick="showTab('funny')">Naughty</button>
+<button onclick="showTab('future')">Dreams</button>
+<button onclick="showTab('letterTab')">Letter</button>
+<button onclick="openProposal()">Proposal</button>
+</nav>
+
+<!-- HOME -->
+
+<section id="home" class="active">
+<h1 style="font-family:Pacifico">Welcome Aditi ❤️</h1>
+<h2>This website holds my heart</h2>
+</section>
+
+<!-- MEMORIES -->
+
+<section id="memories">
+<h1>Our Memories 📸</h1>
+<div class="slider">
+<div class="slides">
+<img src="p1.jpg">
+<img src="p2.jpg">
+<img src="p3.jpg">
+<img src="p4.jpg">
+<img src="p5.jpg">
+</div>
+</div>
+</section>
+
+<!-- REASONS -->
+
+<section id="reasons">
+<h1>Why I Like You ❤️</h1>
+<h2>Your smile 😊</h2>
+<h2>Your anger 😜</h2>
+<h2>Your care 🤗</h2>
+<h2>Your madness 😂</h2>
+</section>
+
+<!-- BIRTHDAY -->
+
+<section id="birthday">
+<h1>Happy Birthday Aditi 🎂</h1>
+<button onclick="confetti()">Blow Candle 🎂</button>
+</section>
+
+<!-- FUNNY -->
+
+<section id="funny">
+<h1>Naughty Zone 😜</h1>
+<h2>You are sweet but dangerous 😂</h2>
+<h2>My heart has no password only you ❤️</h2>
+</section>
+
+<!-- FUTURE -->
+
+<section id="future">
+<h1>Future Dreams 🌈</h1>
+<h2>Long Drives 🚗</h2>
+<h2>Rain Walk 🌧️</h2>
+<h2>Matching Outfits 😄</h2>
+<h2>Growing Old ❤️</h2>
+</section>
+
+<!-- LETTER -->
+
+<section id="letterTab">
+<h1>Love Letter 💌</h1>
+<div id="letter"></div>
+</section>
+
+<!-- PROPOSAL -->
+
+<div id="proposal">
+<div class="popup">
+<h2>Will You Stay With Me Forever Aditi? 💍</h2>
+<button onclick="yes()">YES ❤️</button>
+<button onclick="no()">NO 😜</button>
+</div>
+</div>
+
+<script>
+
+function showTab(id){
+document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
+document.getElementById(id).classList.add("active");
+}
+
+/* STARS */
+
+for(let i=0;i<120;i++){
+let s=document.createElement("div");
+s.className="star";
+s.style.left=Math.random()*100+"vw";
+s.style.top=Math.random()*100+"vh";
+document.body.appendChild(s);
+}
+
+/* HEARTS */
+
+setInterval(()=>{
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"vw";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),6000);
+},500);
+
+/* LETTER */
+
+let text="Aditi ❤️ You are the best part of my life. Every smile of yours makes my day beautiful. I promise to love you forever.";
+let i=0;
+
+function type(){
+if(i<text.length){
+document.getElementById("letter").innerHTML+=text.charAt(i);
+i++;
+setTimeout(type,50);
+}
+}
+type();
+
+/* CONFETTI */
+
+function confetti(){
+for(let i=0;i<50;i++){
+let c=document.createElement("div");
+c.className="confetti";
+c.innerHTML="🎉";
+c.style.left=Math.random()*100+"vw";
+document.body.appendChild(c);
+setTimeout(()=>c.remove(),3000);
+}
+}
+
+/* PROPOSAL */
+
+function openProposal(){
+document.getElementById("proposal").style.display="flex";
+}
+
+function yes(){
+document.getElementById("proposal").innerHTML="<div class='hug'>🤗❤️</div>";
+fire();
+}
+
+function no(){
+alert("I will ask again 😜");
+}
+
+/* FIREWORK */
+
+function fire(){
+setInterval(()=>{
+let f=document.createElement("div");
+f.className="fire";
+f.innerHTML="🎆";
+f.style.left=Math.random()*100+"vw";
+f.style.top=Math.random()*100+"vh";
+document.body.appendChild(f);
+setTimeout(()=>f.remove(),1000);
+},200);
+}
+
+</script>
+
+</body>
+</html>
